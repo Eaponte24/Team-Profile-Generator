@@ -1,3 +1,6 @@
+const Employee = require("../lib/Employee");
+
+// Creating template literals for each role
 const createTeam = (team) => {
     const createManager = (manager) => {
         return `
@@ -52,4 +55,57 @@ const createTeam = (team) => {
     </div>
     `;
 };
-}
+
+// empty html arry to push the roles into 
+const htmlArr = [];
+
+    htmlArr.push(
+        team.filter((employee) => employee.getRole() === "Manager").map((manager) => createManager(manager))
+    );
+    htmlArr.push(
+        team.filter((employee) => employee.getRole() === "Engineer").map((engineer) => createEngineer(engineer)).join("")
+    );
+    htmlArr.push(
+        team.filter((employee) => employee.getRole() === "Intern").map((intern) => createIntern(intern)).join("")
+    );
+
+    return htmlArr.join("")
+};
+
+module.exports = (team) => {
+    return `
+    <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Software Engineering Team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 jumbotron mb-5 head bg-dark">
+                <h1 class="text-center">My Software Engineering Team</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="main-area col-12 d-flex justify-content-center">
+                ${createTeam(team)}
+        
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    `;
+};
