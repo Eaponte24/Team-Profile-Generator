@@ -7,8 +7,9 @@ body {
 }
 
 .head {
-    background-color: #4b3335;
-    color: #ffffff;
+  text-decoration: underline;
+  background-color: #4b3335;
+  color: #ffffff;
   }
   
   .main-area {
@@ -26,6 +27,7 @@ body {
   }
   
   .main-cards {
+    text-align: center;
     margin: 1em;
     max-width: 280px;
     width: 90%;
@@ -43,8 +45,14 @@ body {
   .list-group-item {
     color: #000000;
   }
+
+  .list-group-item:hover {
+    background-color: #4b3335;
+    color: #ffffff;
+  }
   
   .card-body {
+    border-radius: 0px 0px 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
