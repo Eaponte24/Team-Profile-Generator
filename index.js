@@ -9,6 +9,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const teamMemberInfo = [];
 
+// Question prompts with additional questions depending on what role you choose
 const questions = async () => {
     const answers = await inquirer
     .prompt([
@@ -92,6 +93,7 @@ const questions = async () => {
 
 };
 
+// add additional teammember function
 async function askQuestions() {
     await questions()
     const addTeamAnswers = await inquirer
@@ -113,6 +115,7 @@ async function askQuestions() {
 
 askQuestions();
 
+// Generates HTML page with added members
 function GenTeamHTML () {
     fs.writeFileSync(
       "./dist/index.html", createTeam(teamMemberInfo),"utf-8"
