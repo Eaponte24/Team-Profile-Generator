@@ -11,7 +11,7 @@ To start this application call you need to do is run a node start in the termina
 
 ![Team Profile Generator Final Product](./Screenshots/Team-Profile-Generator(1).PNG)
 
- - Video link to how to use this program.
+https://drive.google.com/file/d/1xL3cVWwlND34TQ1sOKm0lowIqlee3idc/view - Video link to how to use this program.
 
 
 ## Features
